@@ -1,0 +1,259 @@
+\documentclass[11pt, letterpaper]{article}
+
+% Import Packages:
+\usepackage[
+    top=10mm, % seperation between body and page edge from the top,
+    ignoreheadfoot, % set margins without considering header and footer
+    bottom=10 mm, % seperation between body and page edge from the bottom
+    left=1.2 cm, % seperation between body and page edge from the left
+    right=1.2 cm, % seperation between body and page edge from the right
+    % footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[usenames,dvipsnames]{color} %using the color package, not xcolor
+\definecolor{customGreen}{rgb}{0.84, 0.9, 0.8}
+\definecolor{linecolor}{rgb}{0.54, 0.65, 0.6}
+\definecolor{customPink}{rgb}{.96, 0.91, 0.92}
+\definecolor{primaryColor}{rgb}{0, 0, 0}
+\usepackage{enumitem} % for customizing lists
+\usepackage[
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\setlength{\columnsep}{0.5cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    .2 cm
+}{
+    % bottom space:
+    0.1 cm
+} % section title spacing
+
+% Redefine new section with colorbox
+\newcommand{\mysectionheading}[1]{
+  \setlength{\fboxsep}{2pt}
+  \colorbox{customPink}{\textbf{\large\uppercase{#1}}}
+  \vspace{-.7em}
+  \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.6 mm}}
+  \vspace{-1.25em}
+}
+
+% Create education heading. Parameters: deg, loc, date, gpa
+\newcommand{\educationHeading}[4]{
+\runsubsection{#1}
+\hspace*{\fill}
+Graduation Date: \location{\textbf{#3}}
+\\
+\descript{#2}
+\hspace*{\fill}
+GPA:\textbf{#4}\\
+
+}
+% Create Study Abroad heading. Parameters: name, loc, date, description1, description2
+\newcommand{\studyAbroad}[4]{
+\runsubsection{#1}
+\hspace*{\fill}
+\location{\textbf{#3}}
+\\
+\textit{\descript{#2}}
+\\
+\descript{#4}
+}
+
+% Create High School heading. Parameters: name, date, description
+\newcommand{\highschool}[3]{
+\runsubsection{#1}
+\hspace*{\fill}
+\location{\textbf{#2}}
+\\
+\descript{#3}
+}
+% Bullet Lists with fewer gaps command
+\newenvironment{bullets}{
+\vspace{-1mm}
+\normalsize
+\fontsize{10pt}{10pt}
+\vspace{-1.5mm}
+\begin{itemize}[leftmargin=*]
+\itemsep1pt 
+\parskip1.5pt 
+\parsep1.5pt
+}{
+\end{itemize}
+\vspace{-1.8mm}
+}
+% headings command - create different types of heading
+\newcommand{\runsubsection}[1]{%
+\color{primaryColor}%
+% \customLatoBlack%
+\fontsize{12pt}{12pt}%
+\selectfont%
+\bfseries%
+#1%
+\normalfont}%
+
+% Descriptors command
+\newcommand{\descript}[1]{%
+\color{primaryColor}%
+\raggedright%
+% \scshape%
+% \customLatoRegular%
+\fontsize{11pt}{13pt}%
+\selectfont{#1}%
+\normalfont}
+
+% Location command
+\newcommand{\location}[1]{%
+\color{primaryColor}%
+\raggedright%
+% \customLatoBlack%
+\fontsize{11pt}{13pt}%
+\selectfont{#1}%
+\normalfont}
+
+
+% Minor command -  even smaller sub section
+\newcommand{\minorSection}[1]{%
+\color{primaryColor}%
+\raggedright%
+\scshape%
+% \customRalewayMedium%
+\fontsize{11pt}{12pt}%
+% \selectfont{#1}%
+\normalfont}
+
+% Project command
+\newcommand{\Project}[2]{
+\runsubsection{%
+\href{#2}{\uppercase{#1} \,\faExternalLink}
+}
+    \hfill
+}
+
+% Simulate new line
+\newcommand{\fakeNewLine}{\newline \vspace{-\baselineskip}}
+
+% Header
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} 
+
+% Roles heading. Parameters: Company, role, date
+\newcommand{\sectionHeadingSmall}[3]{\runsubsection{\uppercase{#1}}\descript{ |
+#2}\hfill\textbf{\location{\hspace*{4pt} #3}}\vspace{-0.9em}
+\par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
+\vspace{-1.25em}} 
+
+\begin{document}
+% vertical lines
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+\newcommand{\sectionsep}[0]{\vspace{4pt}}
+
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+% header section
+    \begin{header}
+        \fontsize{25 pt}{15 pt}\selectfont Vanessa Isabel Roque
+        \vspace{0.3 pt}
+        \normalsize
+
+        \mbox{\href{mailto:viroque19@gmail.com}{viroque19@gmail.com}}%
+        \kern 5.0 pt\AND\kern 5.0 pt%
+        \mbox{\href{tel:+1-330-730-9139}{330 730 9139}}%
+        \kern 5.0 pt\AND\kern 5.0 pt%
+        \mbox{\href{https://linkedin.com/in/vanessairoque/}{linkedin.com/in/vanessairoque}}%
+        \kern 5.0 pt\AND\kern 5.0 pt%
+        \mbox{\href{https://github.com/vroque19}{github.com/vroque19}}%
+    \end{header}
+
+    \vspace{5 pt-0.2 cm}
+
+\sectionsep
+
+% education section
+\mysectionheading{education}
+
+\educationHeading{California State University, Fullerton}{B.S/M.S Computer Engineering, Computer Science Minor}{May 2025}{3.6}
+
+\vspace{1mm}
+\studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{Fall 2023}{Attended one of South Korea’s most prestigious universities to cultivate a global perspective through an immersive cultural experience}
+
+\vspace{1mm}
+\courseWork{Data Structures, Algorithms, Signals and Systems, Computer Architecture, Networks, Operating Systems, VHDL, Microcontrollers, Electronic Circuits, Object Oriented Programming, Multivariate Calculus, Linear Algebra and Differential Equations}
+
+\vspace{1mm}
+\highschool{Copley High School | Akron, OH}{MAY 2021}{Summa cum laude – 4.0+ GPA}
+
+\sectionsep
+\mysectionheading{experience}
+
+\sectionHeadingSmall{CSUF}{Supplemental Instructor}{January 2023 - Present}
+\begin{bullets}
+    \item Explain complex topics to students taking Calculus III by hosting collaborative learning sessions twice a week
+    \item Collaborate with other SI leaders weekly and prepare study materials for students
+\end{bullets}
+
+\sectionHeadingSmall{Rosendin Elecrtic Co.}{Electical Engineering Intern}{June 2024 - August 2024}
+\begin{bullets}
+    \item Develop detailed electrical designs and specifications for power distribution, lighting, and control systems using Revit
+    \item Use Visual Lighting to create comprehensive lighting designs for commercial buildings and perform photometric analysis to ensure standards for brightness, intensity and energy efficiency are met
+    \item Conduct QA QC in Bluebeam to identify potential issues in schedules, single line diagrams, and drawings
+    \item Inspect the installation of electrical components, such as conduits, wiring, and lighting fixtures during site visits as well as experience the process of construction in-person
+\end{bullets}
+
+\mysectionheading{Projects}
+
+\mysectionheading{Extracurriculars}
+
+
+
+ 
+
+\end{document}
