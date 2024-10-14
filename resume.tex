@@ -5,8 +5,8 @@
     top=10mm, % seperation between body and page edge from the top,
     ignoreheadfoot, % set margins without considering header and footer
     bottom=10 mm, % seperation between body and page edge from the bottom
-    left=1.2 cm, % seperation between body and page edge from the left
-    right=1.2 cm, % seperation between body and page edge from the right
+    left=1 cm, % seperation between body and page edge from the left
+    right=1 cm, % seperation between body and page edge from the right
     % footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -103,7 +103,7 @@ GPA:\textbf{#4}\\
 }
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
-\vspace{-1mm}
+\vspace{-1.8mm}
 \normalsize
 \fontsize{10pt}{10pt}
 \vspace{-1.5mm}
@@ -155,14 +155,6 @@ GPA:\textbf{#4}\\
 % \selectfont{#1}%
 \normalfont}
 
-% Project command
-\newcommand{\Project}[2]{
-\runsubsection{%
-\href{#2}{\uppercase{#1} \,\faExternalLink}
-}
-    \hfill
-}
-
 % Simulate new line
 \newcommand{\fakeNewLine}{\newline \vspace{-\baselineskip}}
 
@@ -191,7 +183,6 @@ GPA:\textbf{#4}\\
 \newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
 
 \newcommand{\sectionsep}[0]{\vspace{4pt}}
-
 
 %--------------------------------------------------------------
 %     Profile
@@ -239,7 +230,7 @@ GPA:\textbf{#4}\\
 \sectionsep
 \mysectionheading{experience}
 
-\sectionHeadingSmall{CSUF}{Supplemental Instructor}{January 2023 - Present}
+\sectionHeadingSmall{California State University, Fullerton}{Supplemental Instructor}{January 2023 - Present}
 \begin{bullets}
     \item Explain complex topics to students taking Calculus III by hosting collaborative learning sessions twice a week
     \item Thoughtfully organize each session by preparing study materials and interactive activities for my students
@@ -265,17 +256,17 @@ GPA:\textbf{#4}\\
 \end{bullets}
 
 \projHeadingSmall{Coffee Can Radar}{Spring 2022}\begin{bullets}
-    \item Conducted code review of signal tracking algorithm to optimize performance of target imaging 
     \item Interfaced raspberry-pi with IR camera and HB100 motion sensor to perform computer vision tasks with the Intel Neural Compute Stick 2
+    \item Conducted code review of signal tracking algorithm in Python to optimize performance of target imaging 
 \end{bullets}
 
 \mysectionheading{Extracurriculars}
 
-\sectionHeadingSmall{Association for Computing Machinery}{member}{2021 - present}
+\sectionHeadingSmall{Association for Computing Machinery}{Team Lead}{2021 - present}
 \begin{bullets}
     \item Gain a deeper understanding of computer science through hands-on programming workshops and events
 \end{bullets}
-\sectionHeadingSmall{Engineering Design Club}{member}{2022 - present}
+\sectionHeadingSmall{Engineering Design Club}{Member}{2022 - present}
 \begin{bullets}
     \item Circuit and program Adafruit Feather RP2040 RFM69 in CircuitPython for 3D printed Pokeball last semester
     \item Gain experience in soldering, 3D printing, solidworks, and PCB by attending hands-on workshops
