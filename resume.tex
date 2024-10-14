@@ -179,6 +179,11 @@ GPA:\textbf{#4}\\
 \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
 \vspace{-1.25em}} 
 
+% Projects heading. Parameters: name, date
+\newcommand{\projHeadingSmall}[2]{\runsubsection{\uppercase{#1}}\hfill\textbf{\location{\hspace*{4pt} #2}}\vspace{-.7em}
+\par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
+\vspace{-1.25em}} 
+
 \begin{document}
 % vertical lines
 
@@ -237,23 +242,40 @@ GPA:\textbf{#4}\\
 \sectionHeadingSmall{CSUF}{Supplemental Instructor}{January 2023 - Present}
 \begin{bullets}
     \item Explain complex topics to students taking Calculus III by hosting collaborative learning sessions twice a week
-    \item Collaborate with other SI leaders weekly and prepare study materials for students
+    \item Thoughtfully organize each session by preparing study materials and interactive activities for my students
 \end{bullets}
 
 \sectionHeadingSmall{Rosendin Elecrtic Co.}{Electical Engineering Intern}{June 2024 - August 2024}
 \begin{bullets}
-    \item Develop detailed electrical designs and specifications for power distribution, lighting, and control systems using Revit
-    \item Use Visual Lighting to create comprehensive lighting designs for commercial buildings and perform photometric analysis to ensure standards for brightness, intensity and energy efficiency are met
-    \item Conduct QA QC in Bluebeam to identify potential issues in schedules, single line diagrams, and drawings
-    \item Inspect the installation of electrical components, such as conduits, wiring, and lighting fixtures during site visits as well as experience the process of construction in-person
+    \item Developed detailed electrical designs and specifications for power distribution, lighting, and control systems using Autodesk Revit
+    \item Used Visual Lighting to create comprehensive lighting designs for commercial buildings and perform photometric analysis to ensure standards for brightness, intensity and energy efficiency are met
+    \item Conducted QA QC in Bluebeam to identify potential issues in schedules, single line diagrams, and drawings
+    \item Inspected the installation of electrical components, such as conduits, wiring, and lighting fixtures during site visits as well as experience the process of construction in-person
 \end{bullets}
 
 \mysectionheading{Projects}
 
+\projHeadingSmall{Traffic Controller}{September 2024}
+
+\begin{bullets}
+    \item Developed an embedded system to simulate traffic light and pedestrian crossing management for an intersection using the TIVA-C Launchpad (TM4C123G)
+    \item Designed and wired a circuit on a breadboard using an 8-bit shift register to extend GPIO pins, simulating traffic lights with LEDs and switches for real-world traffic scenarios
+    \item Programmed the FSM in C to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with SysTick timers and Phase-Locked Loop (PLL) clock management
+    \item Utilized Code Composer Studio for comprehensive debugging and validation of the system under various input configurations
+\end{bullets}
+
+
 \mysectionheading{Extracurriculars}
 
-
-
+\sectionHeadingSmall{Association for Computing Machinery}{member}{2021 - present}
+\begin{bullets}
+    \item Gain a deeper understanding of computer science through hands-on programming workshops and events
+\end{bullets}
+\sectionHeadingSmall{Engineering Design Club}{member}{2022 - present}
+\begin{bullets}
+    \item Circuit and program Adafruit Feather RP2040 RFM69 in CircuitPython for 3D printed Pokeball last semester
+    \item Gain experience in soldering, 3D printing, solidworks, and PCB by attending hands-on workshops
+\end{bullets}
  
 
 \end{document}
