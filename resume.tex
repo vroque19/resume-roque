@@ -101,6 +101,14 @@ GPA:\textbf{#4}\\
 \\
 \descript{#3}
 }
+% Parameters: courses
+\newcommand{\listing}[2]{
+    \vspace{-0.9em}
+\par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
+\vspace{-1.25em}
+    \textbf{#1}
+    \descript{#2}
+}
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
 \vspace{-1.8mm}
@@ -179,8 +187,6 @@ GPA:\textbf{#4}\\
 \begin{document}
 % vertical lines
 
-% Parameters: courses
-\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
 
 \newcommand{\sectionsep}[0]{\vspace{4pt}}
 
@@ -232,13 +238,13 @@ GPA:\textbf{#4}\\
 
 \sectionHeadingSmall{California State University, Fullerton}{Supplemental Instructor}{January 2023 - Present}
 \begin{bullets}
-    \item Explain complex Calculus III concepts to students by hosting collaborative learning sessions twice a week, boosting students' grades by 10\%.
-    \item Thoughtfully organize each session by preparing study materials and interactive activities for my students.
+    \item Explain complex Calculus III concepts to students by hosting collaborative learning sessions twice a week.
+    \item Thoughtfully organize each session by preparing relevant study materials, boosting students' grades by 10\%.
 \end{bullets}
 
 \sectionHeadingSmall{Rosendin Elecrtic Co.}{Electical Engineering Intern}{June 2024 - August 2024}
 \begin{bullets}
-    \item Developed electrical designs and specifications for power distribution, lighting, and control systems using Autodesk Revit.
+    \item Developed electrical designs and specifications for power, lighting, and control systems in Autodesk Revit.
     \item Used Visual Lighting to create comprehensive lighting designs for commercial buildings and perform photometric analysis to ensure standards for brightness, intensity and energy efficiency are met.
     \item Conducted QA QC in Bluebeam to identify potential issues in schedules, single line diagrams, and drawings.
 
@@ -257,15 +263,15 @@ GPA:\textbf{#4}\\
 \projHeadingSmall{Traffic Controller}{Fall 2024}
 
 \begin{bullets}
-    \item Developed an embedded system to simulate traffic light and pedestrian crossing management for an intersection using the TIVA-C Launchpad (TM4C123G).
-    \item Designed and wired a circuit on a breadboard using an 8-bit shift register to extend GPIO pins, simulating traffic lights with LEDs and switches for real-world traffic scenarios.
-    \item Programmed the FSM in C to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with SysTick timers and Phase-Locked Loop (PLL) clock management
-    \item Utilized Code Composer Studio for comprehensive debugging and validation of the system under various input configurations.
+    
+    \item Designed an embedded system using using the TIVA-C Launchpad (TM4C123G), a breadboard, shift register, buttons, and LEDs to simulate real-world traffic light and pedestrian crossing management of an intersection.
+    \item Programmed a FSM in C to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and Phase-Locked Loop (PLL) clock management.
+    \item Tested the validity of the system through comprehensive debugging under various input conditions.
 \end{bullets}
 
 \projHeadingSmall{Coffee Can Radar}{Spring 2022}\begin{bullets}
     \item Interfaced Raspberry Pi with IR camera and HB100 motion sensor to perform computer vision tasks with the Intel Neural Compute Stick 2.
-    \item Conducted code review of signal tracking algorithm in Python to optimize performance of target imaging. 
+    \item Conducted code review of signal tracking algorithm in Python to optimize performance of target imaging.
 \end{bullets}
 
 \mysectionheading{Extracurriculars}
@@ -280,5 +286,7 @@ GPA:\textbf{#4}\\
     \item Gain experience in soldering, 3D printing, solidworks, and PCB by attending hands-on workshops.
 \end{bullets}
  
+% skills
+\listing{Skills:}{Python, C/C++, HTML, Javascript, TailwindCSS, SvelteKit, VS Code, Code Composer Studio, Git, GitHub}
 
 \end{document}
