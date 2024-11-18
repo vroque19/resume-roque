@@ -4,9 +4,9 @@
 \usepackage[
     top=10mm, % seperation between body and page edge from the top,
     ignoreheadfoot, % set margins without considering header and footer
-    bottom=10 mm, % seperation between body and page edge from the bottom
-    left=1 cm, % seperation between body and page edge from the left
-    right=1 cm, % seperation between body and page edge from the right
+    bottom=5 mm, % seperation between body and page edge from the bottom
+    left=9mm, % seperation between body and page edge from the left
+    right=9mm, % seperation between body and page edge from the right
     % footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -133,6 +133,15 @@ GPA:\textbf{#4}\\
 #1%
 \normalfont}%
 
+\newcommand{\courseWork}[1]{\textbf{Relevant Coursework:} #1}
+
+\newcommand{\skills}[1]{
+    \vspace{-.7em}
+  \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.6 mm}}
+  \vspace{-1.25em}\textbf{Skills:} #1}
+
+\newcommand{\tools}[1]{\textbf{Tools:} #1}
+
 % Descriptors command
 \newcommand{\descript}[1]{%
 \color{primaryColor}%
@@ -174,7 +183,8 @@ GPA:\textbf{#4}\\
 } 
 
 % Roles heading. Parameters: Company, role, date
-\newcommand{\sectionHeadingSmall}[3]{\runsubsection{\uppercase{#1}}\descript{ |
+\newcommand{\sectionHeadingSmall}[3]{
+    \vspace{0.2em}\runsubsection{\uppercase{#1}}\descript{ |
 #2}\hfill\textbf{\location{\hspace*{4pt} #3}}\vspace{-0.9em}
 \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
 \vspace{-1.25em}} 
@@ -222,24 +232,23 @@ GPA:\textbf{#4}\\
 % education section
 \mysectionheading{education}
 
-\educationHeading{California State University, Fullerton}{Integrated B.S/M.S Computer Engineering, Computer Science Minor}{May 2025}{3.6}
+\educationHeading{California State University, Fullerton}{B.S/M.S Computer Engineering, Computer Science Minor}{May 2025}{3.6}
 
 \vspace{1mm}
 \studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{Fall 2023}{Attended one of South Korea’s most prestigious universities to cultivate a global perspective through an immersive cultural experience.}
 
 \vspace{1mm}
-% \courseWork{Data Structures, Algorithms, Signals and Systems, Computer Architecture, Networks, Operating Systems, VHDL, Microcontrollers, Electronic Circuits, Object Oriented Programming, Multivariate Calculus, Linear Algebra and Differential Equations}
+\courseWork{Data Structures, Algorithms, Object-Oriented Programming, Databases, Operating Systems, Computer Networks, Embedded Systems, Computer Architecture, Real-Time Audio Processing, Signals and Systems, Electronic Circuits, Linear Algebra and Differential Equations, Multivariate Calculus}
 
 % \vspace{1mm}
-\highschool{Copley High School | Akron, OH}{MAY 2021}{Summa cum laude – 4.0+ GPA}
 
 \sectionsep
 \mysectionheading{experience}
 
 \sectionHeadingSmall{California State University, Fullerton}{Supplemental Instructor}{January 2023 - Present}
 \begin{bullets}
-    \item Explain complex Calculus III concepts to students by hosting collaborative learning sessions twice a week.
-    \item Thoughtfully organize each session by preparing relevant study materials, boosting students' grades by 10\%.
+    \item Guide Calculus III students through complex topics by hosting bi-weekly collaborative study sessions.
+    \item Prepare relevant study materials to enhance student understanding, boosting students' grades by 10\%.
 \end{bullets}
 
 \sectionHeadingSmall{Rosendin Elecrtic Co.}{Electrical Engineering Intern}{June 2024 - August 2024}
@@ -251,7 +260,7 @@ GPA:\textbf{#4}\\
     \item Attended site visits to inspect the installation of electrical components such as conduits, transformers, and fixtures.
 \end{bullets}
 
-\sectionHeadingSmall{Summer undergraduate research academy}{Research}{June 2024 - August 2024}
+\sectionHeadingSmall{Summer undergraduate research academy}{Researcher}{June 2024 - August 2024}
 \begin{bullets}
     \item Investigated various wireless power transfer technologies and identified magnetic resonance as an improvement to current inductive technologies and a potential future trend for electric vehicles.
     \item Built and tested a small-scale LLC resonant converter, collaborating with my research partner. We identified optimal tuning to improve charging efficiency and minimize interference from other devices.
@@ -260,25 +269,28 @@ GPA:\textbf{#4}\\
 
 \mysectionheading{Projects}
 
-\projHeadingSmall{Traffic Controller}{Fall 2024}
+\projHeadingSmall{Smart Sleep Hub}{Fall 2024 - Present}\begin{bullets}
 
-\begin{bullets}
-    
-    \item Designed an embedded system using using the TIVA-C Launchpad (TM4C123G), a breadboard, shift register, buttons, and LEDs to simulate real-world traffic light and pedestrian crossing management of an intersection.
-    \item Programmed a FSM in C to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and Phase-Locked Loop (PLL) clock management.
-    \item Tested the validity of the system through comprehensive debugging under various input conditions.
+    \item Designed and developed a device that promotes a healthy sleep environment by regulating light exposure and recording sleep data via light, motion, and temperature sensors.
+    \item Interfaced a Raspberry Pi 5 with a touchcscreen to display a clock, enable sleep configuration, and view their sleep data. Developed the UI using SvelteKit, Javascript, TailwindCSS, and Vite.
+    \item  Integrated Philips Hue RESTful API that allows the hub to control bedroom light color and intensity.
+    \item Conducting tests in a team to ensure seamless integration of software and hardware.
 \end{bullets}
 
-\projHeadingSmall{Coffee Can Radar}{Spring 2022}\begin{bullets}
-    \item Interfaced Raspberry Pi with IR camera and HB100 motion sensor to perform computer vision tasks with the Intel Neural Compute Stick 2.
-    \item Conducted code review of signal tracking algorithm in Python to optimize performance of target imaging.
+\projHeadingSmall{Recipe Keeper iOS App}{Fall 2024 - Present}
+
+\begin{bullets}
+    \item Developed an IOS app to simplify recipe management so creating, updating and viewing recipes can be effortless.
+
+    \item Designed a user-friendly interface using SwiftUI to enhance user experience and ensure seamless navigation.
+    % \item Implemented a feature to parse URL data, automatically generating recipes from online sources using web scraping and natural language processing.
 \end{bullets}
 
 \mysectionheading{Extracurriculars}
 
-\sectionHeadingSmall{Association for Computing Machinery}{Board Officer}{2022 - present}
+\sectionHeadingSmall{Association for Computing Machinery}{Board Member}{2022 - present}
 \begin{bullets}
-    \item Gain a deeper understanding of computer science through hands-on programming workshops and events.
+    \item Organize workshops that explored the boundaries of artificial intelligence, ensuring accessibility for participants.
 \end{bullets}
 \sectionHeadingSmall{Engineering Design Club}{Member}{2022 - present}
 \begin{bullets}
@@ -286,7 +298,11 @@ GPA:\textbf{#4}\\
     \item Gain experience in soldering, 3D printing, solidworks, and PCB by attending hands-on workshops.
 \end{bullets}
  
-% skills
-\listing{Skills:}{Python, C/C++, HTML, Javascript, TailwindCSS, SvelteKit, VS Code, Code Composer Studio, Git, GitHub}
+% skills and tools
+
+\skills{Python, C/C++, HTML, Javascript, TailwindCSS, MySQL, SwiftUI, SvelteKit}
+\vspace{5mm}
+
+\tools{VS Code, Git, GitHub, XCode, Code Composer Studio}
 
 \end{document}
