@@ -2,7 +2,7 @@
 
 % Import Packages:
 \usepackage[
-    top=10mm, % seperation between body and page edge from the top,
+    top=6mm, % seperation between body and page edge from the top,
     ignoreheadfoot, % set margins without considering header and footer
     bottom=5 mm, % seperation between body and page edge from the bottom
     left=9mm, % seperation between body and page edge from the left
@@ -75,7 +75,7 @@
 \newcommand{\educationHeading}[4]{
 \runsubsection{#1}
 \hspace*{\fill}
-Graduation Date: \location{\textbf{#3}}
+Expected: \location{\textbf{#3}}
 \\
 \descript{#2}
 \hspace*{\fill}
@@ -232,7 +232,7 @@ GPA:\textbf{#4}\\
 % education section
 \mysectionheading{education}
 
-\educationHeading{California State University, Fullerton}{B.S/M.S Computer Engineering, Computer Science Minor}{May 2025}{3.6}
+\educationHeading{California State University, Fullerton}{B.S/M.S Computer Engineering, Computer Science Minor}{May 2026}{3.6}
 
 \vspace{1mm}
 \studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{Fall 2023}{Attended one of South Korea’s most prestigious universities to cultivate a global perspective through an immersive cultural experience.}
@@ -269,12 +269,19 @@ GPA:\textbf{#4}\\
 
 \mysectionheading{Projects}
 
-\projHeadingSmall{Smart Sleep Hub}{Fall 2024 - Present}\begin{bullets}
+\projHeadingSmall{Traffic Controller}{September 2024}
 
-    \item Designed and currently developing a device that promotes a healthy sleep environment by regulating light exposure and recording sleep data via light, motion, and temperature sensors.
+\begin{bullets}
+    
+    \item Created an embedded system to simulate a real-world traffic intersection using using the TIVA-C Launchpad, shift register, LEDs, and buttons effectively integrating hardware and software.
+    \item Designed a FSM to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and Phase-Locked Loop (PLL) clock management.
+    \item Developed a test framework to validate state transitions and timing mechanisms, debugging hardware-software interactions under diverse conditions.
+\end{bullets}
+\projHeadingSmall{Smart Sleep Hub}{September 2024 - Present}\begin{bullets}
+
+    \item Developing a device that promotes a healthy sleep environment by interfacing a Raspberry Pi with smart lights and sensors to test environmental factors affecting sleep.
     \item Interfaced a Raspberry Pi 5 with a touchscreen to display a clock, enable sleep configuration, and view sleep data.
-    \item  Integrating Philips Hue RESTful API that allows the hub to control bedroom light color and intensity.
-    \item Conducting tests in a team to ensure seamless integration of software and hardware.
+
 \end{bullets}
 
 \projHeadingSmall{Recipe Keeper iOS App}{Fall 2024 - Present}
@@ -289,7 +296,7 @@ GPA:\textbf{#4}\\
 
 \sectionHeadingSmall{Association for Computing Machinery}{Board Member}{2022 - present}
 \begin{bullets}
-    \item Organize workshops that explored the boundaries of artificial intelligence, ensuring accessibility for participants.
+    \item Organize workshops that explore the boundaries of artificial intelligence, ensuring accessibility for participants.
 \end{bullets}
 \sectionHeadingSmall{Engineering Design Club}{Member}{2022 - present}
 \begin{bullets}
