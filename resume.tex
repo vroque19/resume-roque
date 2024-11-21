@@ -44,6 +44,8 @@
 
 \usepackage{charter}
 
+
+
 % Some settings:
 \raggedright
 \setlength{\columnsep}{0.5cm} % set column seperation
@@ -111,7 +113,7 @@ GPA:\textbf{#4}\\
 }
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
-\vspace{-1.8mm}
+\vspace{-1.25mm}
 \normalsize
 \fontsize{10pt}{10pt}
 \vspace{-1.5mm}
@@ -121,7 +123,7 @@ GPA:\textbf{#4}\\
 \parsep1.5pt
 }{
 \end{itemize}
-\vspace{-1.8mm}
+\vspace{-1.25mm}
 }
 % headings command - create different types of heading
 \newcommand{\runsubsection}[1]{%
@@ -132,6 +134,8 @@ GPA:\textbf{#4}\\
 \bfseries%
 #1%
 \normalfont}%
+
+\newcommand{\bold}[1]{\fontsize{11pt}{12pt}\textbf{#1}\selectfont}
 
 \newcommand{\courseWork}[1]{\textbf{Relevant Coursework:} #1}
 
@@ -184,15 +188,15 @@ GPA:\textbf{#4}\\
 
 % Roles heading. Parameters: Company, role, date
 \newcommand{\sectionHeadingSmall}[3]{
-    \vspace{0.2em}\runsubsection{\uppercase{#2}}\descript{ |
-#1}\hfill\textbf{\location{\hspace*{4pt} #3}}\vspace{-0.9em}
+    \vspace{0.2em}\runsubsection{#2}\descript{ |
+    \textit{#1}}\hfill\textbf{\location{\hspace*{4pt} #3}}\vspace{-0.9em}
 \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
 \vspace{-1.25em}} 
 
 % Projects heading. Parameters: name, date
-\newcommand{\projHeadingSmall}[2]{\runsubsection{\uppercase{#1}}\hfill\textbf{\location{\hspace*{4pt} #2}}\vspace{-.7em}
-\par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
-\vspace{-1.25em}} 
+% \newcommand{\projHeadingSmall}[2]{\runsubsection{\fontsize{14pt}{14pt}{#1}}\hfill\textbf{\location{\hspace*{4pt} #2}}\vspace{-.7em}
+% \par\noindent\textcolor{linecolor}{\rule{\linewidth}{0.2 mm}}
+% \vspace{-1.25em}} 
 
 \begin{document}
 % vertical lines
@@ -232,10 +236,10 @@ GPA:\textbf{#4}\\
 % education section
 \mysectionheading{education}
 
-\educationHeading{California State University, Fullerton}{B.S/M.S in Computer Engineering, Minor in Computer Science}{May 2025}{3.6}
+\educationHeading{California State University, Fullerton}{B.S/M.S in Computer Engineering, Minor in Computer Science}{May 2025}{ 3.6}
 
 \vspace{1mm}
-\studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{Fall 2023}{Studied Computer Science at one of South Korea’s most prestigious universities.}
+\studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{}{Studied Computer Science at one of South Korea’s most prestigious universities.}
 
 \vspace{1mm}
 \courseWork{Data Structures, Algorithms, Object-Oriented Programming, Databases, Operating Systems, Computer Networks, Embedded Systems, Computer Architecture, Real-Time Audio Processing, Signals and Systems, Electronic Circuits, Linear Algebra and Differential Equations, Multivariate Calculus}
@@ -248,61 +252,58 @@ GPA:\textbf{#4}\\
 \sectionHeadingSmall{California State University, Fullerton}{Supplemental Instructor}{January 2023 - Present}
 \begin{bullets}
         \item Guide Calculus III students through complex topics by hosting bi-weekly collaborative study sessions.
-        \item Prepare relevant study materials to enhance student understanding, boosting students' grades by \textbf{10\%}.
+        \item Prepare relevant study materials to enhance student understanding, boosting students' grades by \bold{10\%}.
 \end{bullets}
-
+\vspace{-2mm}
 \sectionHeadingSmall{Rosendin Electric Co.}{Electrical Engineering Intern}{June 2024 - August 2024}
 \begin{bullets}
     \item Developed software-based electrical designs and specifications for power, lighting, and control systems.
-    \item Used light-modeling software to create and analyze lighting designs for commercial buildings and perform \textbf{photometric calculations} ensuring standards are met for brightness, intensity and energy efficiency per \textbf{NEC}.
+    \item Used light-modeling software to create and analyze lighting designs for commercial buildings and perform \bold{photometric calculations} ensuring standards are met for brightness, intensity and energy efficiency per \bold{NEC}.
     \item Performed rigorous quality assurance and quality control inspections of schedules, and CAD models utilizing collaborative construction software to identify and mitigate discrepencies and design conflicts.
 
-    \item Conducted site visits to oversee the installation of key components in interconnected eletrical systems across several large scale commerical projects, totaling over \textbf{200,000 square feet}.
-\end{bullets}
 
-\sectionHeadingSmall{Summer Undergraduate Research Academy}{ Research Intern}{June 2024 - August 2024}
+    \item Conducted site visits to oversee the installation of key components in interconnected eletrical systems across several large scale commerical projects, totaling over \bold{200,000 }{${\bold{ft}}^2$}.
+\end{bullets}
+\vspace{-2mm}
+\sectionHeadingSmall{Summer Undergraduate Research Academy at CSUF}{Research Intern}{June 2024 - August 2024}
 \begin{bullets}
-    \item Compared various wireless power transfer technologies and identified magnetic resonance as an improvement to current inductive technologies and a potential future trend for electric vehicles.
-    \item Collaborate with a small team to build an LLC resonant converter and identify optimal tuning parameters, boosting charging efficiency by \textbf{12.5\%} while minimizing unwanted eletrical interferences.
+    \item Compared various wireless power transfer technologies and identified \bold{magnetic resonance} as an improvement to current inductive technologies and a potential future trend for electric vehicles.
+    \item Collaborated with a small team to build an \bold{LLC resonant converter} and identify optimal tuning parameters, boosting charging efficiency by \bold{12.5\%} while minimizing unwanted eletrical interferences.
  
 \end{bullets}
 
 \mysectionheading{Projects}
 
-\projHeadingSmall{Traffic Controller}{September 2024}
+\sectionHeadingSmall{Real-time centralized control system}{Traffic Controller}{September 2024}
 
 \begin{bullets}
     
-    \item Created an embedded system to simulate a real-world traffic intersection using using the \textbf{TIVA-C Launchpad}, shift register, LEDs, and buttons effectively integrating hardware and software.
-    \item Designed a \textbf{finite-state machine} to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and Phase-Locked Loop (PLL) clock management.
+    \item Created an embedded system to simulate a real-world traffic intersection using using the \bold{TIVA-C Launchpad}, shift register, LEDs, and buttons effectively integrating hardware and software.
+        \item Designed a \bold{finite-state machine} to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and \bold{Phase-Locked Loop (PLL)} clock management.
     \item Developed a test framework to validate state transitions and timing mechanisms, debugging hardware-software interactions under diverse conditions.
 \end{bullets}
-\projHeadingSmall{Smart Sleep Hub}{September 2024 - Present}\begin{bullets}
-
-    \item Developed a device that promotes a healthy sleep environment by interfacing a \textbf{Raspberry Pi 5} with smart lights and sensors to test environmental factors affecting sleep, achieving a \textbf{15\% improvement} in circadian rhythm alignment.
-    \item Interfaced a Raspberry Pi 5 with a touchscreen to display a clock, enable sleep configuration, and view sleep data.
-    \item  Integrating Philips Hue RESTful API that allows the hub to control bedroom light color and intensity.
-    \item Conducting tests in a team to ensure seamless integration of software and hardware.
-\end{bullets}
-
-\projHeadingSmall{Recipe Keeper iOS App}{Fall 2024 - Present}
+\vspace{-2mm}
+\sectionHeadingSmall{Smart device that improves your sleep environment}{Smart Sleep Hub}{September 2024 - Present}
 
 \begin{bullets}
-    \item Developing an iOS app to simplify recipe management for effortless creating, updating and viewing recipes.
 
-    % \item Implemented a feature to parse URL data, automatically generating recipes from online sources using web scraping and natural language processing.
+    \item Developed a device to promotes healthy sleep habits by interfacing a \bold{Raspberry Pi 5} with smart lights and sensors to test environmental factors affecting sleep, achieving a \bold{15\% improvement} in circadian rhythm alignment.
+    \item Interfaced a \bold{Raspberry Pi 5} with a touchscreen to display a clock, enable sleep configuration, and view sleep data.
 \end{bullets}
 
+
+\vspace{-2mm}
 \mysectionheading{Extracurriculars}
 
 \sectionHeadingSmall{Association for Computing Machinery}{Board Member}{2022 - present}
 \begin{bullets}
-    \item Organize workshops that explored the boundaries of artificial intelligence, ensuring accessibility for participants.
+    \item Organize workshops that explored the boundaries of \bold{artificial intelligence}, ensuring accessibility for participants.
 \end{bullets}
+\vspace{-2mm}
 \sectionHeadingSmall{Engineering Design Club}{Lead Software Developer}{2022 - present}
 \begin{bullets}
     \item Lead a team of engineers to design and develop a 3D-printed Pokeball with lighting and audio features.
-    \item Designed and implemented the circuit for the \textbf{Adafruit Feather} and programmed its functionality in \textbf{CircuitPython}.
+    \item Engineered the circuit for the \bold{Adafruit Feather} and programmed its functionality in \bold{CircuitPython}.
 
 \end{bullets}
  
