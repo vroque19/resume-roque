@@ -2,11 +2,11 @@
 
 % Import Packages:
 \usepackage[
-    top=10mm, % seperation between body and page edge from the top,
+    top=8mm, % seperation between body and page edge from the top,
     ignoreheadfoot, % set margins without considering header and footer
-    bottom=10 mm, % seperation between body and page edge from the bottom
-    left=10mm, % seperation between body and page edge from the left
-    right=10mm, % seperation between body and page edge from the right
+    bottom=9 mm, % seperation between body and page edge from the bottom
+    left=8mm, % seperation between body and page edge from the left
+    right=8mm, % seperation between body and page edge from the right
     % footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -146,6 +146,8 @@ GPA:\textbf{#4}\\
 
 \newcommand{\tools}[1]{\textbf{Tools:} #1}
 
+\newcommand{\awards}[1]{\textit{\textbf{Honors and Awards:}} \textit{#1}}
+
 % Descriptors command
 \newcommand{\descript}[1]{%
 \color{primaryColor}%
@@ -216,7 +218,7 @@ GPA:\textbf{#4}\\
 
 % header section
     \begin{header}
-        \fontsize{25 pt}{15 pt}\selectfont Vanessa Isabel Roque
+        \fontsize{25 pt}{15 pt} \textbf{\selectfont Vanessa Isabel Roque}
         \vspace{0.3 pt}
         \normalsize
 
@@ -237,12 +239,13 @@ GPA:\textbf{#4}\\
 \mysectionheading{education}
 
 \educationHeading{California State University, Fullerton}{B.S/M.S in Computer Engineering, Minor in Computer Science}{May 2025}{ 3.6}
+\awards{Dean's List, Boeing Scholarship, Gilman Scholarship}
 
 \vspace{1mm}
 \studyAbroad{Korea University | Seoul, South Korea}{Study Abroad Reciprocal Exchange Program}{}{Studied Computer Science at one of South Korea’s most prestigious universities.}
 
 \vspace{1mm}
-\courseWork{Data Structures, Algorithms, Operating Systems, Databases and File Systems, Artificial Intelligence, Computer Architecture, Computer Networks, Linear Algebra}
+\courseWork{Embedded Systems, Electronic Circuits, Data Structures, Algorithms, Operating Systems, Databases and File Systems, Artificial Intelligence, Computer Architecture, Computer Networks, Linear Algebra}
 
 % \vspace{1mm}
 
@@ -250,6 +253,7 @@ GPA:\textbf{#4}\\
 \mysectionheading{experience}
 
 \sectionHeadingSmall{California State University, Fullerton}{Supplemental Instructor}{January 2023 - Present}
+
 \begin{bullets}
         \item Guide Calculus III students through complex topics by hosting bi-weekly collaborative study sessions.
         \item Prepare relevant study materials to enhance student understanding, boosting students' grades by \bold{10\%}.
@@ -263,6 +267,7 @@ GPA:\textbf{#4}\\
 
     \item Conducted site visits to oversee the installation of key components in interconnected eletrical systems across several large scale commercial projects, totaling over \bold{200,000 }{${\bold{ft}}^2$}.
 \end{bullets}
+
 \vspace{-2mm}
 \sectionHeadingSmall{Summer Undergraduate Research Academy at CSUF}{Research Intern}{June 2024 - August 2024}
 \begin{bullets}
@@ -271,18 +276,19 @@ GPA:\textbf{#4}\\
  
 \end{bullets}
 
+\vspace{1mm}
 \mysectionheading{Projects}
 
 \sectionHeadingSmall{Embedded C, TIVA-C, Code Composer Studio}{Traffic Controller}{ }
 
 \begin{bullets}
     
-    \item Created an embedded system to simulate a real-world traffic intersection using using the \bold{TIVA-C Launchpad}, shift register, LEDs, and buttons effectively integrating hardware and software.
+    \item Created an embedded system to simulate a real-world traffic intersection using using the \bold{TIVA-C Launchpad} microcontroller, shift register, LEDs, and buttons effectively integrating hardware and software.
         \item Designed a \bold{finite-state machine} to respond to binary switch inputs representing traffic and pedestrian activity, optimizing state transitions and timing with the SysTick timer and \bold{Phase-Locked Loop (PLL)} clock management.
     \item Developed a test framework to validate state transitions and timing mechanisms, debugging hardware-software interactions under diverse conditions.
 \end{bullets}
 \vspace{-2mm}
-\sectionHeadingSmall{LIFX API, Bash, Python, Javascript, HTML, TailwindCSS, I2C}{Smart Sleep Hub}{ }
+\sectionHeadingSmall{Raspberry Pi 5, LIFX API, Bash, Python, Javascript, HTML, TailwindCSS, I2C}{Smart Sleep Hub}{ }
 
 \begin{bullets}
 
@@ -290,11 +296,7 @@ GPA:\textbf{#4}\\
     \item Wrote automation scripts to streamline device configuration, data collection, environmental monitoring, and testing, enhancing usability and efficiency.
     \item  Interfaced the microcontroller with a touchscreen to display a clock, enable sleep configuration, view sleep data, and view environmental data.
 \end{bullets}
-\vspace{-2mm}
-\sectionHeadingSmall{Swift, SwiftUI, Core Data}{Recipe Keeper iOS App}{}
-\begin{bullets}
-\item Developing an iOS app to simplify recipe management for effortless creating, updating and viewing recipes
-\end{bullets}
+
 
 
 
@@ -304,7 +306,8 @@ GPA:\textbf{#4}\\
 \begin{bullets}
     \item Organize workshops that explored the boundaries of \bold{artificial intelligence}, ensuring accessibility for participants.
 \end{bullets}
-\vspace{-2mm}
+\vspace{-1mm}
+
 \sectionHeadingSmall{Engineering Design Club}{Lead Software Developer}{ }
 \begin{bullets}
     \item Lead a team of engineers to design and develop a 3D-printed Pokeball with lighting and audio features.
@@ -314,9 +317,9 @@ GPA:\textbf{#4}\\
  
 % skills and tools
 
-\skills{Python, C/C++, Linux, MatLab, ARM, Swift, SPI,  HTML, Javascript, SvelteKit, TailwindCSS, SwiftUI}
+\skills{Linux, Python, C/C++, MatLab, ARM, Swift, SPI,  HTML, Javascript, SvelteKit, TailwindCSS, SwiftUI}
 \vspace{5mm}
 
-\tools{VS Code, Git, GitHub, Code Composer Studio, XCode, MySQL, Core Data, Vite}
+\tools{Git, GitHub, VS Code, Code Composer Studio, XCode, MySQL}
 
 \end{document}
